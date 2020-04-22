@@ -38,7 +38,7 @@ jobs:
         
       - name: docker_build
         run: |
-          docker build -t test98767767/test_app:1
+          docker build -t test98767767/test_app:1 .
       
       - name: docker_push
         run: |
