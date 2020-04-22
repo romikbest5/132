@@ -31,3 +31,18 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: docker_build
+        run: |
+          docker build -t test98767767/test_app:1
+      
+      - name: docker_push
+        run: |
+          docker login --username=test98767767 --password=test98767767
+          docker push test98767767/test_app:1
+        
+        
