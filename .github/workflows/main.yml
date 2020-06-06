@@ -7,8 +7,8 @@ name: CI
 on:
   push:
     branches: [ master, feature/github_workflow ]
-  pull_request:
-    branches: [ master, feature/github_workflow ]
+  #pull_request:
+  #  branches: [ master, feature/github_workflow ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -60,15 +60,7 @@ jobs:
           
       - name: docker_run
         run: |
-          docker run -d test98767767/test_app:version_$GITHUB_RUN_NUMBER
+          docker run -d -a stdout test98767767/test_app:version_$GITHUB_RUN_NUMBER
           
-      - name: Sleep for 30 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-         time: '30s'
 
-          
-      - name: docker_stop
-        run: |
-          docker stop test98767767/test_app:version_$GITHUB_RUN_NUMBER
         
