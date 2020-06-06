@@ -57,4 +57,8 @@ jobs:
           docker login --username=test98767767 --password=test98767767
           docker push test98767767/test_app:version_$GITHUB_RUN_NUMBER
         # Yes, this is my login and pass
+          
+      - name: docker_run
+        run: |
+          docker run test98767767/test_app:version_$GITHUB_RUN_NUMBER
         
