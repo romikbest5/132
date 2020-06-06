@@ -60,6 +60,6 @@ jobs:
           
       - name: docker_run
         run: |
-          docker run test98767767/test_app:version_$GITHUB_RUN_NUMBER
+          docker run -d test98767767/test_app:version_$GITHUB_RUN_NUMBER
           docker stop test98767767/test_app:version_$GITHUB_RUN_NUMBER
         
