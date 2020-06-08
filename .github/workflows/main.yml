@@ -64,7 +64,7 @@ jobs:
           
   deploy:
     needs: [docker]
-    runs-on: [ubuntu-latest]
+    runs-on: [self-hosted]
     steps:
      # - name: Set tag to env
      #   run: echo ::set-env name=TAG::$(echo ${GITHUB_REF:11})
