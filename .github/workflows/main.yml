@@ -69,5 +69,5 @@ jobs:
      # - name: Set tag to env
      #   run: echo ::set-env name=TAG::$(echo ${GITHUB_REF:11})
       - name: Send webhook for deploy
-        run: "curl --silent --fail -X POST romikbest5.ddns.net -H @{'Content-Type' = 'application/json'} -d '{\"owner\": \"test98767767\", \"repository\": \"test_app\", \"tag\": \"version_$GITHUB_RUN_NUMBER\", \"ports\": {\"8080\": 8080}}'"
+        run: "curl --silent --show-error --fail -X POST romikbest5.ddns.net -H @{'Content-Type' = 'application/json'} -d '{\"owner\": \"test98767767\", \"repository\": \"test_app\", \"tag\": \"version_$GITHUB_RUN_NUMBER\", \"ports\": {\"8080\": 8080}}'"
 
