@@ -50,17 +50,17 @@ jobs:
         
       - name: docker_build
         run: |
-          docker build -t test98767767/test_app:version_1 .
+          docker build -t test98767767/test_app:version_2 .
       
       - name: docker_push
         run: |
           docker login --username=test98767767 --password=test98767767
-          docker push test98767767/test_app:version_1
+          docker push test98767767/test_app:version_2
         # Yes, this is my login and pass
           
       - name: docker_run
         run: |
-          docker run -d test98767767/test_app:version_1
+          docker run -d test98767767/test_app:version_2
           
   deploy:
     needs: [docker]
@@ -71,5 +71,5 @@ jobs:
       - name: Send webhook for deploy
         run: |
           remove-item alias:curl
-          curl --silent --show-error --fail -X POST 192.168.10.125:5000 -H 'Content-Type: application/json' -d '{test98767767/test_app:version_1 test_app}'
+          curl --silent --show-error --fail -X POST 192.168.10.125:5001 -H 'Content-Type: application/json' -d '{test98767767/test_app:version_2 test_app}'
 
