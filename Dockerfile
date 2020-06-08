@@ -14,4 +14,4 @@ RUN pip install -e .
 ENV FLASK_APP js_example
 
 EXPOSE 5000
-CMD ["flask", "run"]
+ENTRYPOINT flask run --host=0.0.0.0
