@@ -71,5 +71,5 @@ jobs:
       - name: Send webhook for deploy
         run: |
           remove-item alias:curl
-          curl --silent --show-error --fail -X POST 192.168.10.125:5000 -H 'Content-Type: application/json' -d '{test98767767/test_app:version_\$GITHUB_RUN_NUMBER% test_app}'
+          curl --silent --show-error --fail -X POST 192.168.10.125:5000 -H 'Content-Type: application/json' -d '{test98767767/test_app:version_\$GITHUB_RUN_NUMBER test_app}'
 
