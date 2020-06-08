@@ -1,14 +1,17 @@
-from python:3-alpine
+FROM python:3
 
-workdir /var/src/app
-copy . .
-
-run python -m venv venv 
-run . venv/bin/activate
-run pip install -e .
-
-env FLASK_APP js_example
-cmd ["flask", "run", "--host", "0,0,0,0"]
+WORKDIR /usr/src/app
 
 
+COPY . .
 
+
+RUN python3 -m venv venv
+RUN . venv/bin/activate
+RUN pip install -e .
+
+
+ENV FLASK_APP js_example
+
+EXPOSE 5000
+CMD ["flask", "run"]
